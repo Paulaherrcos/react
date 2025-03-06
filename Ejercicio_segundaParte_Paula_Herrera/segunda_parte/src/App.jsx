@@ -9,6 +9,7 @@ import Contador from './Contador.jsx'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import Formulario from './Formulario.jsx'
 import Comentarios from './Comentarios.jsx'
+import ListaTareas from './userReducer/ListaTareas.jsx'
 
 // CREAR HEDAER Y QUE CADA CONTENIDO SE CARGE AQUI
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
         <button style={styles.button} onClick={() => setPagina('formulario')}>Formulario</button>
         <button style={styles.button} onClick={() => setPagina('comentarios')}>Comentario</button>
         <button style={styles.button} onClick={() => setPagina('contador')}>Contador UseReducer</button>
+        <button style={styles.button} onClick={() => setPagina('listaTareas')}>Lista de tareas UseReducer</button>
       </nav>
 
       {/* Contenido dinámico */}
@@ -35,7 +37,8 @@ const App = () => {
         {pagina === 'contador' && <Contador />}
         {pagina === 'formulario' && <Formulario />}
         {pagina === 'comentarios' && <Comentarios />}
-        {pagina === 'comentarios' && <Contador />}
+        {pagina === 'conatdor' && <Contador />}
+        {pagina === 'listaTareas' && <ListaTareas />}
       </div>
     </div>
   );
