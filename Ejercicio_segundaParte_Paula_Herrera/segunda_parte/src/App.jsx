@@ -24,6 +24,7 @@ const App = () => {
         <button style={styles.button} onClick={() => setPagina('contador')}>Contador</button>
         <button style={styles.button} onClick={() => setPagina('formulario')}>Formulario</button>
         <button style={styles.button} onClick={() => setPagina('comentarios')}>Comentario</button>
+        <button style={styles.button} onClick={() => setPagina('contador')}>Contador UseReducer</button>
       </nav>
 
       {/* Contenido dinámico */}
@@ -34,6 +35,7 @@ const App = () => {
         {pagina === 'contador' && <Contador />}
         {pagina === 'formulario' && <Formulario />}
         {pagina === 'comentarios' && <Comentarios />}
+        {pagina === 'comentarios' && <Contador />}
       </div>
     </div>
   );
