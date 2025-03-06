@@ -1,8 +1,8 @@
 import { useReducer, useState } from "react";
 
-const estadoInicail = [];
+const estadoInicail = [];//lista vacía
 
-const reducer = (state, action) => {
+const reducer = (state, action) => { //el state representa la función actual del reducer, cuyo valor inicial es []
   switch (action.type) {
     case "AGREGAR_TAREA":
       return [...state, { id: Date.now(), texto: action.payload, completada: false }];
@@ -19,6 +19,7 @@ const reducer = (state, action) => {
 
 const ListaTareas = () => {
     // usereducer
+    // el dispatch seria el que lleva a la accion que hayamos puesto en el case correspondiente del switch
   const [tareas, dispatch] = useReducer(reducer, estadoInicail);
   const [texto, setTexto] = useState("");
   const [mensaje, setMensaje] = useState("");
@@ -46,7 +47,7 @@ const ListaTareas = () => {
       <button onClick={agregarTarea}>Agregar</button>
       <p>{mensaje}</p>
       <ul>
-        {tareas.map((tarea) => (
+        {tareas.map((tarea) => ( //es mejor no usar index en listas dinámicas ya que los indices cambian
             // uso "line-through" : "none" para que si la tarea es completada se tache y si no no
           <li key={tarea.id} style={{ textDecoration: tarea.completada ? "line-through" : "none" }}>
             {tarea.texto}

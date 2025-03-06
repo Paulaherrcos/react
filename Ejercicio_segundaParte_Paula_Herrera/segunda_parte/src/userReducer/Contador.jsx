@@ -16,6 +16,7 @@ const reducer = (state, action) => {
 };
 
 const Contador = () => {
+    // el dispatch seria el que lleva a la accion que hayamos puesto en el case correspondiente del switch
   const [contador, dispatch] = useReducer(reducer, estadoInicial);
 
   return (
