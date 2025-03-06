@@ -14,10 +14,7 @@ const reducer = (state, action) => {
       return state.filter((usuario) => usuario.id !== action.payload);
     case editar_usuario:
       return state.map((usuario) =>
-        usuario.id === action.payload.id
-          ? { ...usuario, nombre: action.payload.nombre, correo: action.payload.correo }
-          : usuario
-      );
+        usuario.id === action.payload.id ? { ...usuario, nombre: action.payload.nombre, correo: action.payload.correo }: usuario);//se compara su id con el id del payload de la acción, Si el id del usuario coincide, se crea un nuevo objeto para ese usuario
     default:
       return state;
   }

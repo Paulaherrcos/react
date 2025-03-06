@@ -12,6 +12,9 @@ import Comentarios from './Comentarios.jsx'
 import ListaTareas from './userReducer/ListaTareas.jsx'
 import FormularioDinamico from './userReducer/FormularioDinamico.jsx'
 import ListaUsuarios from './userReducer/ListaUsuarios.jsx'
+import Notas from './userReducer/Notas.jsx'
+
+
 // CREAR HEDAER Y QUE CADA CONTENIDO SE CARGE AQUI
 const App = () => {
   const [pagina, setPagina] = useState('videos'); // Estado para controlar qué ejercicio se muestra
@@ -30,6 +33,7 @@ const App = () => {
         <button style={styles.button} onClick={() => setPagina('listaTareas')}>Lista de tareas UseReducer</button>
         <button style={styles.button} onClick={() => setPagina('formularioDinamico')}>Fomrulario dinámico UseReducer</button>
         <button style={styles.button} onClick={() => setPagina('listaUsuarios')}>Lista usuarios UseReducer</button>
+        <button style={styles.button} onClick={() => setPagina('notas')}>Notas UseReducer</button>
       </nav>
 
       {/* Contenido dinámico */}
@@ -44,6 +48,7 @@ const App = () => {
         {pagina === 'listaTareas' && <ListaTareas />}
         {pagina === 'formularioDinamico' && <FormularioDinamico />}
         {pagina === 'listaUsuarios' && <ListaUsuarios />}
+        {pagina === 'notas' && <Notas />}
       </div>
     </div>
   );
